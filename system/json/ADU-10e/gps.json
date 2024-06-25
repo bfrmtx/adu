@@ -1,0 +1,14 @@
+ {
+  "gps": 8,
+  "galileo": 8,
+  "glonass": 0,
+  "beidou": 2,
+  "tracked": 6,
+  "in_view": 12,
+  "in_use": 4,
+  "latitude": 29,
+  "longitude": 52,
+  "elevation": 340,
+  "fix": "G4",
+  "moving_mode": "off"
+ }

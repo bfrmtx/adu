@@ -1,0 +1,88 @@
+  function utc_list_slider() {
+    $start_at = intval(-11);
+    $stops_a = intval(11);
+    $utc_list_a = array();
+    $value = 0;
+
+    for ($i = $start_at; $i <= $stops_a; $i++) {
+      if ($i < 0) $utc_list_a[] = $i . ":30";
+      $utc_list_a[] = $i . ":00";
+      if ($i >= 0) $utc_list_a[] = $i . ":30";
+    }
+    $post_name = "utc_offset";
+    $form = '<label for="utc_offset">UTC Offset:</label><br />' . PHP_EOL;
+    $form .= '<input type="range"  name="' . $post_name . '" id="' . $post_name . '" list="utc_values" /> ' . PHP_EOL;
+    $form .= '<datalist id="utc_values">' . PHP_EOL;
+    foreach ($utc_list_a as $utc) {
+      $form .= '<option value="' . $utc . '">' . $utc . '</option>' . PHP_EOL;
+    }
+    $form .= '</datalist>' . PHP_EOL;
+    $form .= '<br />' . PHP_EOL;
+
+    return $form;
+  }
+
+  function select_timezone() {
+    $tzlist = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
+    $form = '<label for="timezone">Timezone:</label><br />' . PHP_EOL;
+    $form .= '<select name="timezone" id="timezone">' . PHP_EOL;
+    foreach ($tzlist as $tz) {
+      $form .= '<option value="' . $tz . '">' . $tz  . '</option>' . PHP_EOL;
+    }
+    $form .= '</select>' . PHP_EOL;
+    $form .= '<br />' . PHP_EOL;
+    return $form;
+  }
+
+  Example 
+   <div class="w3-row w3-padding-32">
+      <div class="w3-full w3-container">
+        <h2 class="w3-text-teal"> UTC </h2>
+        <label for="tempB">Choose a comfortable temperature:</label><br />
+        <input type="range" id="tempB" name="temp" list="values" />
+
+        <datalist id="values">
+          <option value="0" label="very cold!"></option>
+          <option value="25" label="cool"></option>
+          <option value="50" label="medium"></option>
+          <option value="75" label="getting warm!"></option>
+          <option value="100" label="hot!"></option>
+        </datalist>
+      </div>
+    </div>
+    <br>
+
+    WITH CSS
+    
+.slidecontainer {
+  width: 100%;
+}
+.slider {
+  width: 70%;
+  height: 15px;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.slider:hover {
+  opacity: 1;
+}
+
+datalist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  writing-mode: vertical-lr;
+  width: 800px;
+}
+
+option {
+  padding: 0;
+}
+
+input[type="range"] {
+  width: 800px;
+  margin: 0;
+}
+
+// end Example

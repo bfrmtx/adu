@@ -1,0 +1,47 @@
+{
+  "channel": "",
+  "sensor": "",
+  "chopper": "",
+  "gain": "",
+  "serial": 0,
+  "tilt": 0.0,
+  "azimuth": 0.0,
+  "ne_pos": 0.0,
+  "sw_pos": 0.0,
+  "gains": [
+    "auto",
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "channels": [
+    "Ex",
+    "Ey",
+    "Ez",
+    "Hx",
+    "Hy",
+    "Hz"
+  ],
+  "e-sensors": [
+    "EFP-06",
+    "EFP-07",
+    "Buffer",
+    "Rod",
+    "Plate"
+  ],
+  "h-sensors": [
+    "auto",
+    "MFS-06e",
+    "MFS-07e",
+    "MFS-10e",
+    "SHFT-02e",
+    "SHFT-03e",
+    "FGS-03e",
+    "FGS-04e",
+    "MFS-06",
+    "MFS-07"
+  ]
+}
