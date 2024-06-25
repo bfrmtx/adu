@@ -13,7 +13,7 @@ have different names like or have meta packages that include the package you wan
 systemctl status lighttpd.service
 systemctl status php8.3-fpm.service
 ```
-
+(using php-fpm should not install the apache).
 Hence that ubuntu like, start the services, arch you do it yourself. <br>
 The systemctl command shows you where config files are stored, and more importantly, 
 where the php-fpm socket is located.
